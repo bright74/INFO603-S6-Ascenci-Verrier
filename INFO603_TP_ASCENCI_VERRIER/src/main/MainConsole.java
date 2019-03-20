@@ -1,10 +1,23 @@
 package main;
 
-public class MainConsole {
+import lisibilite_code.ActionConsole;
+import modele.Tableau;
+
+/**********************************************************
+ * 
+ * MainConsole:
+ * 
+ * Interface sur console.
+ * L'utilisateur peut manipuler un graphe orienté.
+ * 
+ *********************************************************/
+
+public class MainConsole extends ActionConsole {
+	
+	private Tableau t;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		//ecrire_console(t.toString());
 	}
 
 }
