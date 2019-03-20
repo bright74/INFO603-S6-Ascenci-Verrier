@@ -19,6 +19,7 @@ public class MainConsole extends ActionConsole {
 	public static void main(String[] args) {
 		
 		t = new Tableau();
+		t.genereValeursAleatoires();
 		
 		ecrire_console(t.toString());
 	}

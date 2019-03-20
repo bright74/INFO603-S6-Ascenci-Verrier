@@ -1,6 +1,7 @@
 package modele;
 
 import constantes.Constantes;
+import utilitaire.Aleatoire;
 
 /**********************************************************
  * 
@@ -69,8 +70,30 @@ public class Tableau {
 	 * 
 	 */
 	
-	public int getValueRang(int rang) {
-		return this.valeurs[rang];
+	public int getValueRang (int rang) {
+		return getValeurs()[rang];
+	}
+	
+	/*
+	 * 
+	 * Met à jour la valeur du tableau à l'indice rang.
+	 * 
+	 */
+	
+	public void setValueRang (int rang, int valeur) {
+		getValeurs()[rang] = valeur;
+	}
+	
+	/*
+	 * 
+	 * Génère des valeurs aléatoires.
+	 * 
+	 */
+	
+	public void genereValeursAleatoires() {
+		for(int i=0; i<getValeurs().length; i++) {
+			setValueRang(i, Aleatoire.nbAleaRange(Constantes.DEFAULT_MIN_RANGE_VALUE, Constantes.DEFAULT_MAX_RANGE_VALUE));
+		}
 	}
 	
 	/*
