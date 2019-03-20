@@ -14,10 +14,13 @@ import modele.Tableau;
 
 public class MainConsole extends ActionConsole {
 	
-	private Tableau t;
+	private static Tableau t;
 
 	public static void main(String[] args) {
-		//ecrire_console(t.toString());
+		
+		t = new Tableau();
+		
+		ecrire_console(t.toString());
 	}
 
 }

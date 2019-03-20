@@ -61,6 +61,32 @@ public class Tableau {
 	 * 
 	 *********************************************************/
 	
+	/*
+	 * 
+	 * Récupère la valeur du tableau à l'indice rang.
+	 * 
+	 * Retourne un entier.
+	 * 
+	 */
 	
+	public int getValueRang(int rang) {
+		return this.valeurs[rang];
+	}
+	
+	/*
+	 * 
+	 * Retourne l'état du tableau.
+	 * 
+	 * Retourne un String.
+	 *
+	 */
+	
+	public String toString() {
+		String s = "";
+		for (int i=0; i<Constantes.DEFAULT_TABLEAU_SIZE; i++) {
+			s += getValueRang(i) + " ";
+		}
+		return s;
+	}
 	
 }
