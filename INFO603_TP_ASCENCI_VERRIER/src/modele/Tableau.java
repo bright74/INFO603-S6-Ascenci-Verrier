@@ -1,12 +1,14 @@
 package modele;
 
 import constantes.Constantes;
+import utilitaire.Aleatoire;
 
 /**********************************************************
  * 
  * Tableau:
  * 
  * ReprÃ©sente un tableau d'entiers.
+ * Les indices iront de 1 a n.
  * 
  *********************************************************/
 
@@ -32,7 +34,7 @@ public class Tableau {
 	}
 	
 	public Tableau(int tailleTab) {
-		setValeurs(new int[tailleTab]);
+		setValeurs(new int[tailleTab + Constantes.DEFAULT_FIRST_INDEX]);
 	}
 	
 	/**********************************************************
@@ -60,13 +62,52 @@ public class Tableau {
 	 * MÃ©thodes publiques:
 	 * 
 	 *********************************************************/
+	
+	/*
+	 * 
+	 * Récupère la valeur du tableau à l'indice rang.
+	 * 
+	 * Retourne un entier.
+	 * 
+	 */
+	
 	public int getValueRang(int rang) {
-		return this.valeurs[rang];
+		return getValeurs()[rang];
 	}
 	
+	/*
+	 * 
+	 * Met à jour la valeur du tableau à l'indice rang.
+	 * 
+	 */
+
+	public void setValueRang (int rang, int valeur) {
+		getValeurs()[rang] = valeur;
+	}
+	
+	/*
+	 * 
+	 * Génère des valeurs aléatoires.
+	 * 
+	 */
+
+	public void genereValeursAleatoires() {
+		for(int i = Constantes.DEFAULT_FIRST_INDEX; i<getValeurs().length; i++) {
+			setValueRang(i, Aleatoire.nbAleaRange(Constantes.DEFAULT_MIN_RANGE_VALUE, Constantes.DEFAULT_MAX_RANGE_VALUE));
+			}
+		}
+	
+		/*
+		 * 
+		 * Retourne l'état du tableau.
+		 * 
+		 * Retourne un String.
+		 *
+		 */
+		
 	public String toString() {
 		String s = "";
-		for (i=0; i<Constantes.DEFAULT_TABLEAU_SIZE;i++) {
+		for (int i = Constantes.DEFAULT_FIRST_INDEX; i<getValeurs().length; i++) {
 			s += getValueRang(i) + " ";
 		}
 		return s;
