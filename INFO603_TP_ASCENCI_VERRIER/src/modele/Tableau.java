@@ -60,5 +60,15 @@ public class Tableau {
 	 * Méthodes publiques:
 	 * 
 	 *********************************************************/
+	public int getValueRang(int rang) {
+		return this.valeurs[rang];
+	}
 	
+	public String toString() {
+		String s = "";
+		for (i=0; i<Constantes.DEFAULT_TABLEAU_SIZE;i++) {
+			s += getValueRang(i) + " ";
+		}
+		return s;
+	}
 }
