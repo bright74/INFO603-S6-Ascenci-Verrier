@@ -57,6 +57,33 @@ public class Tableau {
 	 * 
 	 *********************************************************/
 	
+	/*
+	 * 
+	 * Procédure récursive appelée par la méthode
+	 * triInsertionSequentielle.
+	 * 
+	 */
+	
+	private void triInsertionSequentielleRec(int index) {
+		int x, k;
+		
+		if (index > Constantes.DEFAULT_FIRST_INDEX) {
+			
+			triInsertionSequentielleRec(index - 1);
+			
+			k = index - 1;
+			x = getValueRang(index);
+			
+			while (k >= Constantes.DEFAULT_FIRST_INDEX && getValeurs()[k] > x) {
+				getValeurs()[k+1] = getValeurs()[k];
+				k--;
+			}
+			
+			getValeurs()[k+1] = x;
+			
+		}
+	}
+	
 	/**********************************************************
 	 * 
 	 * Méthodes publiques:
@@ -117,6 +144,12 @@ public class Tableau {
 	 * 
 	 * Exercice 1: Sémantique axiomatique du tri par insertion séquentielle
 	 * 
+	 * 
+	 * 
 	 *********************************************************/
+	
+	public void triInsertionSequentielle() {
+		triInsertionSequentielleRec(getValeurs().length - 1);
+	}
 	
 }

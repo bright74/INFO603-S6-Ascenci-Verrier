@@ -22,6 +22,10 @@ public class MainConsole extends ActionConsole {
 		t.genereValeursAleatoires();
 		
 		ecrire_console(t.toString());
+		
+		t.triInsertionSequentielle();
+		
+		ecrire_console(t.toString());
 	}
 
 }
