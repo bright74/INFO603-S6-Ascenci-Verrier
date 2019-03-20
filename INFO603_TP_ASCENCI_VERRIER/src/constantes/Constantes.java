@@ -4,7 +4,7 @@ public class Constantes {
 	
 	/*
 	 * 
-	 * 
+	 * Tailles du tableau.
 	 * 
 	 */
 	
@@ -12,7 +12,15 @@ public class Constantes {
 	
 	/*
 	 * 
+	 * Indices du tableau.
 	 * 
+	 */
+	
+	public static final int DEFAULT_FIRST_INDEX = 1;
+	
+	/*
+	 * 
+	 * Intervalles des valeurs du tableau.
 	 * 
 	 */
 	

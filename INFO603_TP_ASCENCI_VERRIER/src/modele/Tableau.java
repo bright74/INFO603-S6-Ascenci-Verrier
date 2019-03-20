@@ -8,6 +8,7 @@ import utilitaire.Aleatoire;
  * Tableau:
  * 
  * Représente un tableau d'entiers.
+ * Les indices iront de 1 à n.
  * 
  *********************************************************/
 
@@ -33,7 +34,7 @@ public class Tableau {
 	}
 	
 	public Tableau(int tailleTab) {
-		setValeurs(new int[tailleTab]);
+		setValeurs(new int[tailleTab + Constantes.DEFAULT_FIRST_INDEX]);
 	}
 	
 	/**********************************************************
@@ -91,7 +92,7 @@ public class Tableau {
 	 */
 	
 	public void genereValeursAleatoires() {
-		for(int i=0; i<getValeurs().length; i++) {
+		for(int i = Constantes.DEFAULT_FIRST_INDEX; i<getValeurs().length; i++) {
 			setValueRang(i, Aleatoire.nbAleaRange(Constantes.DEFAULT_MIN_RANGE_VALUE, Constantes.DEFAULT_MAX_RANGE_VALUE));
 		}
 	}
@@ -106,10 +107,16 @@ public class Tableau {
 	
 	public String toString() {
 		String s = "";
-		for (int i=0; i<Constantes.DEFAULT_TABLEAU_SIZE; i++) {
+		for (int i = Constantes.DEFAULT_FIRST_INDEX; i<getValeurs().length; i++) {
 			s += getValueRang(i) + " ";
 		}
 		return s;
 	}
+	
+	/**********************************************************
+	 * 
+	 * Exercice 1: Sémantique axiomatique du tri par insertion séquentielle
+	 * 
+	 *********************************************************/
 	
 }
