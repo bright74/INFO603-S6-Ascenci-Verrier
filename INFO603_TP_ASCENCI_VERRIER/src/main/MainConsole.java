@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Collections;
+
 import lisibilite_code.ActionConsole;
 import modele.Tableau;
 
@@ -23,7 +25,7 @@ public class MainConsole extends ActionConsole {
 		
 		ecrire_console(t.toString());
 		
-		t.triInsertionSequentielle();
+		t.triTerritoires();
 		
 		ecrire_console(t.toString());
 	}

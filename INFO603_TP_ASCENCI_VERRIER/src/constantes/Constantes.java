@@ -26,4 +26,12 @@ public class Constantes {
 	
 	public static final int DEFAULT_MIN_RANGE_VALUE = 1;
 	public static final int DEFAULT_MAX_RANGE_VALUE = 1000;
+	
+	/*
+	 * 
+	 * Pour l'affichage.
+	 * 
+	 */
+	
+	public static final String CONSOLE_SEPARATOR = "######################################";
 }
