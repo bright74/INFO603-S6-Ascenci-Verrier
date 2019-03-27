@@ -23,7 +23,7 @@ public class MainConsole extends ActionConsole {
 		
 		ecrire_console(t.toString());
 		
-		t.triInsertionSequentielle();
+		t.triTerritoires();
 		
 		ecrire_console(t.toString());
 	}
