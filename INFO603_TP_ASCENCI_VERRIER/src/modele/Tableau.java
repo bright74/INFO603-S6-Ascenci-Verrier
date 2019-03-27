@@ -103,7 +103,7 @@ public class Tableau {
 		int valMini = getValeurRang(indexMin);
 		int indMini = indexMin;
 		
-		for(int i=indexMin+1; i<indexMax; i++) {
+		for(int i=indexMin+1; i<indexMax+1; i++) {
 			if(valMini > getValeurRang(i)) {
 				valMini = getValeurRang(i);
 				indMini = i;
@@ -125,7 +125,7 @@ public class Tableau {
 		int valMax = getValeurRang(indexMin);
 		int indMax = indexMin;
 		
-		for(int i=indexMin+1; i<indexMax; i++) {
+		for(int i=indexMin+1; i<indexMax+1; i++) {
 			if(valMax < getValeurRang(i)) {
 				valMax = getValeurRang(i);
 				indMax = i;
@@ -145,7 +145,6 @@ public class Tableau {
 		int sauv = getValeurRang(index1);
 		setValeurRang(index1, getValeurRang(index2));
 		setValeurRang(index2, sauv);
-		System.out.println(toString());
 	}
 	
 	/**********************************************************
@@ -202,6 +201,33 @@ public class Tableau {
 	
 	/*
 	 * 
+	 * Vérifie si les valeurs du tableau sont triées.
+	 * 
+	 * Retourne un booléen.
+	 * 
+	 */
+	
+	public boolean estTrie(int index1, int index2) {
+		boolean estTrie = true;
+		int i = index1;
+		
+		/* On sauvegarde le premier élément */
+		int sauv = getValeurRang(i);
+		i++;
+		
+		while(i<index2+1 && estTrie) {
+			/* Le tableau est trié si pour tout a<b, t[a]<t[b] */
+			estTrie = sauv <= getValeurRang(i);
+			
+			sauv = getValeurRang(i);
+			i++;
+		}
+		
+		return estTrie;
+	}
+	
+	/*
+	 * 
 	 * Retourne l'état du tableau.
 	 * 
 	 * Retourne un String.
@@ -245,18 +271,16 @@ public class Tableau {
 	 */
 	
 	public void triTerritoires() {
-		int i,a,b;
+		int a,b;
 		
 		a = Constantes.DEFAULT_FIRST_INDEX;
 		b = getTaille()-1;
-		i = Constantes.DEFAULT_FIRST_INDEX;
 		
 		while(a < b) {
 			echange(a, getIndValeurMin(a,b));
 			echange(b, getIndValeurMax(a,b));
 			a++;
 			b--;
-			i++;
 		}
 	}
 	

@@ -1,7 +1,5 @@
 package main;
 
-import java.util.Collections;
-
 import lisibilite_code.ActionConsole;
 import modele.Tableau;
 
