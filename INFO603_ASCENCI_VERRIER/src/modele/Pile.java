@@ -6,9 +6,9 @@ import constantes.Constantes;
 
 public class Pile<T> {
 
-	private ArrayList<T> elements;
-	private int taille;
-	private int nb_elements;
+	protected ArrayList<T> elements;
+	protected int taille;
+	protected int nb_elements;
 	
 	public Pile( int nb ) {
 		this.elements = new ArrayList<T>();
@@ -27,7 +27,7 @@ public class Pile<T> {
 	public boolean estPleine() {
 		return this.nb_elements == taille;
 	}
-	
+
 	public T sommet() {
 		if( !estVide() ) {
 			return this.elements.get( this.nb_elements-1 );
@@ -36,7 +36,7 @@ public class Pile<T> {
 		return null;
 	}
 	
-	public void empiler( T element ) {
+	public void empile( T element ) {
 		if( !estPleine() ) {
 			this.elements.add( element );
 			this.nb_elements++;
@@ -48,6 +48,13 @@ public class Pile<T> {
 			this.elements.remove( this.nb_elements - 1 );
 			this.nb_elements--;
 		}
+	}
+	
+	public String toString() {
+		String s = "";
+		s.concat("Tete de pile: " + sommet() + "\n");
+		s.concat("Nb elements: " + this.nb_elements + "\n");
+		return s;
 	}
 	
 }

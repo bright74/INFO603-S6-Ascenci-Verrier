@@ -15,6 +15,8 @@ import lisibilite.ActionsConsole;
 	 
 	 private static void testsMain() {
 		 p = new Pile();
+		 
+		 
 	 }
 	 
 	 private static void displayState() {
