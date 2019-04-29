@@ -52,8 +52,8 @@ public class Pile<T> {
 	
 	public String toString() {
 		String s = "";
-		s.concat("Tete de pile: " + sommet() + "\n");
-		s.concat("Nb elements: " + this.nb_elements + "\n");
+		s += "Tete de pile: " + sommet() + "\n";
+		s += "Nb elements: " + this.nb_elements + "\n";
 		return s;
 	}
 	

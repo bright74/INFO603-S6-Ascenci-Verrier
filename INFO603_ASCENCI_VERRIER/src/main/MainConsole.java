@@ -7,16 +7,28 @@ import lisibilite.ActionsConsole;
  public class MainConsole extends ActionsConsole {
 	 
 	 private static boolean ended = false;
-	 private static Pile p;
+	 private static Pile<Integer> p;
 	 
 	 private static void configMain() {
 		 
 	 }
 	 
 	 private static void testsMain() {
-		 p = new Pile();
+		 p = new Pile<Integer>();
 		 
+		 p.empile(10);
+		 p.empile(50);
+		 p.empile(3);
 		 
+		 ecrire_console(p.toString());
+		 
+		 p.depile();
+		 
+		 ecrire_console(p.toString());
+		 
+		 p.depile();
+		 
+		 ecrire_console(p.toString());
 	 }
 	 
 	 private static void displayState() {
@@ -48,16 +60,17 @@ import lisibilite.ActionsConsole;
  		 displayState();
  		 
  		 /* coeur du programme */
- 		 while( !ended ) {
- 			 
- 			 /* affiche le menu */
- 			 displayMenu();
- 			 
- 			 /* récupère et traite le choix de l'utilisateur */
- 			 handleCommand();
- 			 
- 			 /* affiche l'état de l'application */
- 			 displayState();
- 		 }
+// 		 while( !ended ) {
+// 			 
+// 			 /* affiche le menu */
+// 			 displayMenu();
+// 			 
+// 			 /* récupère et traite le choix de l'utilisateur */
+// 			 handleCommand();
+// 			 
+// 			 /* affiche l'état de l'application */
+// 			 displayState();
+// 		 }
+ 		 
  	 }
 }
