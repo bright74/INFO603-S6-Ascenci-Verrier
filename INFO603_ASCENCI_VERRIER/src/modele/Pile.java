@@ -27,7 +27,7 @@ public class Pile<T> {
 	public boolean estPleine() {
 		return this.nb_elements == taille;
 	}
-
+	
 	public T sommet() {
 		if( !estVide() ) {
 			return this.elements.get( this.nb_elements-1 );
@@ -36,14 +36,14 @@ public class Pile<T> {
 		return null;
 	}
 	
-	public void empile( T element ) {
+	public void empiler( T element ) {
 		if( !estPleine() ) {
 			this.elements.add( element );
 			this.nb_elements++;
 		}
 	}
 	
-	public void depile() {
+	public void depiler() {
 		if( !estVide() ) {
 			this.elements.remove( this.nb_elements - 1 );
 			this.nb_elements--;
@@ -56,5 +56,5 @@ public class Pile<T> {
 		s += "Nb elements: " + this.nb_elements + "\n";
 		return s;
 	}
-	
+
 }
